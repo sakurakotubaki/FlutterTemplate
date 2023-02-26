@@ -1,5 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_template/about_listen/listen_provider.dart';
+import 'package:flutter_template/about_state/count_state.dart';
+import 'package:flutter_template/about_state_notifire/my_notifier.dart';
 
 void main() {
   runApp(ProviderScope(child: const MyApp()));
@@ -19,20 +24,7 @@ class MyApp extends StatelessWidget {
         foregroundColor: Colors.grey, // AppBarのフォントの色.
         centerTitle: true, // AppBarのAndroidのタイトルを中央寄せにする.
       )),
-      home: const TemplatePage(),
-    );
-  }
-}
-
-class TemplatePage extends ConsumerWidget {
-  const TemplatePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Template'),
-      ),
+      home: const ListenPage(),
     );
   }
 }
